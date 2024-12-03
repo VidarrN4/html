@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas sobre Energía Solar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h2 {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Preguntas sobre Energía Solar</h1>
+
+        <div class="question">
+            <h2>1. ¿La energía solar se puede almacenar en baterías para su uso durante la noche?</h2>
+            <ul class="answers">
+                <li><input type="radio" id="q1a1" name="q1" value="true"> <label for="q1a1">Verdadero</label></li>
+                <li><input type="radio" id="q1a2" name="q1" value="false"> <label for="q1a2">Falso</label></li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <h2>2. ¿La energía solar es una fuente de energía no renovable?</h2>
+            <ul class="answers">
+                <li><input type="radio" id="q2a1" name="q2" value="false"> <label for="q2a1">Verdadero</label></li>
+                <li><input type="radio" id="q2a2" name="q2" value="true"> <label for="q2a2">Falso</label></li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="javascript:void(0);" class="button" onclick="checkAnswers()">Verificar respuestas</a>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            var q1 = document.querySelector('input[name="q1"]:checked');
+            var q2 = document.querySelector('input[name="q2"]:checked');
+            var result = "";
+
+            if (q1 && q2) {
+                // Comprobar las respuestas
+                if (q1.value === "true") {
+                    result += "Pregunta 1: Correcta. La energía solar puede almacenarse en baterías.\n";
+                } else {
+                    result += "Pregunta 1: Incorrecta. La energía solar puede almacenarse en baterías.\n";
+                }
+
+                if (q2.value === "false") {
+                    result += "Pregunta 2: Correcta. La energía solar es una fuente de energía renovable.\n";
+                } else {
+                    result += "Pregunta 2: Incorrecta. La energía solar es una fuente de energía renovable.\n";
+                }
+            } else {
+                result = "Por favor, responda todas las preguntas.";
+            }
+
+            alert(result);
+        }
+    </script>
+
+</body>
+</html>
